@@ -19,8 +19,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-api_key = st.secrets.get("GEMINI_API_KEY")
-
 # Load environment variables
 load_dotenv()
 
@@ -422,7 +420,9 @@ with tab3:
         st.markdown('<div class="tab-header">Agentic Regulatory Report</div>', unsafe_allow_html=True)
         st.markdown("Our **AI Agents** (Powered by Gemini) analyze the raw mathematical findings to generate real-world narratives of systemic harm.")
         
-        gemini_key = os.getenv("GEMINI_API_KEY")
+        
+
+        gemini_key = st.secrets.get("GEMINI_API_KEY")
         
         if not gemini_key:
             st.error("🔒 **API Key Missing!** Please create a `.env` file in the root directory and add `GEMINI_API_KEY` to unlock Agentic Reporting.", icon="🚨")
