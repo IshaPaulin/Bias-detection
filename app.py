@@ -8,7 +8,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import json
-import os
 import time
 from dotenv import load_dotenv
 from proxy_detector import ProxyDetector
@@ -17,6 +16,9 @@ from fairness_metrics import get_fairness_metrics
 from bias_narrator import BiasNarrator
 import plotly.express as px
 import plotly.graph_objects as go
+import streamlit as st
+
+api_key = st.secrets.get("GEMINI_API_KEY")
 
 # Load environment variables
 load_dotenv()
